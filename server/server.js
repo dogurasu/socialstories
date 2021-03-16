@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import colors from 'colors';
 import morgan from 'morgan';
 import connectDB from './config/db.js';
-// import { notFound, errorHandler } from './middleware/errorMiddleware.js.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 // import API router (routes)
 import userRoutes from './routes/userRoutes.js';
@@ -15,22 +15,24 @@ connectDB();
 
 // app setup
 const env = process.env.NODE_ENV;
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const app = express();
+app.use(express.json());
 
 // mount 'em routes
 app.use('/api/v1/users', userRoutes);
 app.use(express.json()); // hook up express.json middleware to accept JSON data in req.body
+
+// hook up morgan if in a development environment
 if (env === "development") {
     // dev gives us http methods, status, etc
     app.use(morgan('dev')); 
 }
 
-// mount routes
-app.get('/', function (req, res) {
-    res.send("Hello World!");
-})
+// catches any mishap (invalid request, page not found) and logs it
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, function() {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Server running in a ${env} environment on http://localhost:${port}`.yellow.bold);
 })

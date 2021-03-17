@@ -11,7 +11,7 @@ const router = express.Router();
 router
     .route('/')
     .post(registerUser)
-    .get(admin, getUsers)
+    .get(protect, admin, getUsers)
 
 router.post('/login', authenticateUser);
 

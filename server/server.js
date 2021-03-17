@@ -7,7 +7,8 @@ import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 // import API router (routes)
-import userRoutes from './routes/userRoutes.js';
+import userRoutes from "./routes/userRoutes.js";
+import storyRoutes from "./routes/storyRoutes.js";
 
 // database and env config
 dotenv.config();
@@ -20,7 +21,8 @@ const app = express();
 app.use(express.json());
 
 // mount 'em routes
-app.use('/api/v1/users', userRoutes);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/stories", storyRoutes)
 app.use(express.json()); // hook up express.json middleware to accept JSON data in req.body
 
 // hook up morgan if in a development environment

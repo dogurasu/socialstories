@@ -1,3 +1,13 @@
+$main-color: #536DFE;
+
 .header {
-    padding: 0;
+    background-color: $main-color;
+    
+    .container {
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

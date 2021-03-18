@@ -8,16 +8,16 @@ import "./static/sass/main.scss";
 
 const App = () => {
     return (
-        <Container>
-            <BrowserRouter>
-                <Header />
+        <BrowserRouter>
+            <Header />
+            <Container>
                 <Route path="/" component={LandingScreen} exact />
                 <Route path="/home" component={HomeScreen} exact />
                 <Route path="/profile" component={HomeScreen} exact />
-                <Route path="/signin" component={HomeScreen} exact />
+                <Route path="/login" component={HomeScreen} exact />
                 <Route path="/story" component={HomeScreen} exact />
-            </BrowserRouter>
-        </Container>
+            </Container>
+        </BrowserRouter>
     );
 }
 

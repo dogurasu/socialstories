@@ -1,0 +1,9 @@
+@mixin contain {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+@mixin erase-link {
+    color: black;
+    text-decoration: none;
+}

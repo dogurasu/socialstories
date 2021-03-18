@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$main-font: 'Roboto', sans-serif;
+$font-size-largest: 6rem;
+$font-size-large: 4rem;
+$font-size-medium: 3rem;
+$font-size-small: 2rem;
+$font-size-smallest: 1rem;
+
+* {
+    font-family: $main-font;
+}
+
+.title-text {
+    font-size: $font-size-largest;
+}
+
+.link-text-large {
+    font-size: $font-size-large;
+    @include erase-link;
+    color: white;
+}
+
+.btn {
+    &-text {
+        font-size: $font-size-small;
+    }
+
+    &-smaller {
+        font-size: $font-size-smallest;
+    }
+}

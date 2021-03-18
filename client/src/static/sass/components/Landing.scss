@@ -1,16 +1,26 @@
 
 .landing {
+    background-color: $color-main;
+    padding: 4rem 0;
+
+    & > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &-text {
 
     }
 
     &-navigation {
+        margin: 3rem 0;
 
         &-about {
             cursor: pointer;
             transition: all 0.5s;
-            // font-size:
+            color: white;
+            margin: 0 2rem;
 
             & > span {
                 cursor: pointer;

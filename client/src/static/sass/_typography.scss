@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-$main-font: 'Roboto', sans-serif;
-$font-size-largest: 6rem;
-$font-size-large: 4rem;
-$font-size-medium: 3rem;
-$font-size-small: 2rem;
-$font-size-smallest: 1rem;
-
 * {
     font-family: $main-font;
 }
 
 .title-text {
+    color: white;
+    margin: 2rem 0;
+    font-weight: 500;
     font-size: $font-size-largest;
+}
+
+.text-white {
+}
+
+.font-small {
+    font-size: $font-size-small;
+}
+
+.font-medium {
+    font-size: $font-size-medium;
+}
+
+.font-large {
+    font-size: $font-size-large;
 }
 
 .link-text-large {
@@ -20,12 +30,12 @@ $font-size-smallest: 1rem;
     color: white;
 }
 
-.btn {
-    &-text {
-        font-size: $font-size-small;
-    }
+// .btn {
+//     &-text {
+//         font-size: $font-size-small;
+//     }
 
-    &-smaller {
-        font-size: $font-size-smallest;
-    }
-}
+//     &-smaller {
+//         font-size: $font-size-smallest;
+//     }
+// }

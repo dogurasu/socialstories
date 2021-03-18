@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container">
                 {/* Refactor to check if user is logged in and redirect them to /home instead */}
                 <h3><Link className="link-text-large" to="/">SocialStory</Link></h3>
-                <Link className="btn btn-text" to="/login">Login/Sign-Up</Link>
+                <Link className="btn font-small" to="/login">Login/Sign-Up</Link>
             </div>
         </header>
     )

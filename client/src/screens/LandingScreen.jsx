@@ -1,10 +1,27 @@
+// import { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Container from "../components/Container.jsx";
 import landingGraphic1 from "../static/img/landing_graphic_1.svg";
 import landingGraphic2 from "../static/img/landing_graphic_2.svg";
 import landingGraphic4 from "../static/img/landing_graphic_4.svg";
+// import { listAllStories } from "../actions/storyActions.js";
 
 const LandingScreen = () => {
+    // const dispatch = useDispatch();
+    // const state = useSelector(state => state);
+
+    // // fetch all stories
+    // useEffect(() => {
+    //     console.log("dispatch useEffect");
+    //     dispatch(listAllStories());
+    // }, [dispatch])
+
+    // useEffect(() => {
+    //     console.log("every render useEffect");
+    //     console.log(state);
+    // })
+
     return (
         <>
             <div className="landing">
@@ -13,8 +30,8 @@ const LandingScreen = () => {
                         <h1 className="title-text text-white">Got a Story? Share it.</h1>
                         <div className="landing-navigation">
                             <Link className="btn btn-text font-small" to="/login">Login/Sign-Up</Link>
-                            <Link className="landing-navigation-about font-small">
-                                <span>About SocialStory</span>
+                            <Link className="landing-navigation-about font-small" to="/home">
+                                <span>Check out Stories</span>
                             </Link>
                         </div>
                     </div>
@@ -38,7 +55,7 @@ const LandingScreen = () => {
             <div className="cta">
                 <Container>
                     <h2 className="font-large">Start Writing Now</h2>
-                    <Link to="/login" className="btn btn-text btn--main font-small">Login/Sign-Up</Link>
+                    <Link to="/home" className="btn btn-text btn--main font-small">Read Stories Now</Link>
                 </Container>
             </div>
         </>

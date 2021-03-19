@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 import { getSingleStory } from "../actions/storyActions";
 import Container from "../components/Container";
 
@@ -44,23 +45,28 @@ const StoryScreen = ({history, location}) => {
     }, [storyStr])
 
     return (
-        <Container>
-            <div className="story">
-                <div className="meta">
-                    <h2 className="meta__title font-large">{story.title}</h2>
-                    <div className="meta__details">
-                        <div className="author__img meta__details__img" style={{backgroundImage: `url('${story.authorImage}')`}}></div>
-                        <p className="meta__details__author font-small">{story.authorName}</p>
-                        <p className="font-small">|</p>
-                        <p className="meta__details__date font-small">{(new Date(story.createdAt)).toLocaleDateString()}</p>
+        <>
+            <Helmet>
+                <title>{story.title}</title>
+            </Helmet>
+            <Container>
+                <div className="story">
+                    <div className="meta">
+                        <h2 className="meta__title font-large">{story.title}</h2>
+                        <div className="meta__details">
+                            <div className="author__img meta__details__img" style={{backgroundImage: `url('${story.authorImage}')`}}></div>
+                            <p className="meta__details__author font-small">{story.authorName}</p>
+                            <p className="font-small">|</p>
+                            <p className="meta__details__date font-small">{(new Date(story.createdAt)).toLocaleDateString()}</p>
+                        </div>
+                    </div>
+                    <img alt="1m4g3 for article" src={`${story.image}`} className="story__img"></img>
+                    <div className="story__txt">
+                        {storyBlocks ? storyBlocks : null}
                     </div>
                 </div>
-                <img alt="1m4g3 for article" src={`${story.image}`} className="story__img"></img>
-                <div className="story__txt">
-                    {storyBlocks ? storyBlocks : null}
-                </div>
-            </div>
-        </Container>
+            </Container>
+        </>
     )
 };
 

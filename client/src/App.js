@@ -1,4 +1,5 @@
 import {BrowserRouter, Route} from 'react-router-dom'
+import { Helmet } from "react-helmet";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import HomeScreen from "./screens/HomeScreen.jsx";
@@ -12,6 +13,9 @@ import "./static/sass/main.scss";
 const App = () => {
     return (
         <BrowserRouter>
+            <Helmet>
+                <title>SocialStory - Share your Story</title>
+            </Helmet>
             <Header />
             <Route path="/" component={LandingScreen} exact />
             <Route path="/stories" component={HomeScreen} exact />

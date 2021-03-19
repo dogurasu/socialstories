@@ -20,10 +20,10 @@ const importData = async () => {
         const createdUsers = await User.insertMany(users);
 
         // we need to establish a connection between users and the stories they've authored
-        stories[0] = {...stories[0], userID: createdUsers[0]._id, authorName: createdUsers[0].name}
-        stories[1] = {...stories[1], userID: createdUsers[0]._id, authorName: createdUsers[0].name}
-        stories[2] = {...stories[2], userID: createdUsers[1]._id, authorName: createdUsers[1].name}
-        stories[3] = {...stories[3], userID: createdUsers[2]._id, authorName: createdUsers[2].name}
+        stories[0] = {...stories[0], userID: createdUsers[0]._id, authorName: createdUsers[0].name, authorImage: createdUsers[0].userImage}
+        stories[1] = {...stories[1], userID: createdUsers[0]._id, authorName: createdUsers[0].name, authorImage: createdUsers[0].userImage}
+        stories[2] = {...stories[2], userID: createdUsers[1]._id, authorName: createdUsers[1].name, authorImage: createdUsers[1].userImage}
+        stories[3] = {...stories[3], userID: createdUsers[2]._id, authorName: createdUsers[2].name, authorImage: createdUsers[2].userImage}
         await Story.insertMany(stories);
 
         console.log('Data Imported!'.green.inverse)

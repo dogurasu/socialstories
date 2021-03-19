@@ -30,6 +30,9 @@ const storySchema = mongoose.Schema({
         type: String,
         required: true
     },
+    authorImage: {
+        type: String
+    },
     story: {
         type: String,
         required: true

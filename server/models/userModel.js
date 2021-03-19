@@ -12,6 +12,9 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true
     },
+    userImage: {
+        type: String
+    },
     summary: {
         type: String,
     },

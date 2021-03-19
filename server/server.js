@@ -20,9 +20,10 @@ const env = process.env.NODE_ENV;
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
-app.use(cors);
+app.use(cors({credentials: true, origin: true}));
 
 // mount 'em routes
+// app.get("/", (req, res) => res.send("Hello"));
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/stories", storyRoutes)
 app.use(express.json()); // hook up express.json middleware to accept JSON data in req.body

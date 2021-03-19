@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
-    storyListReducer
+    storyListReducer,
+    storyDetailReducer,
 } from "../src/reducers/storyReducers";
 
 const rootReducer = combineReducers({
     stories: storyListReducer,
+    storyDetails: storyDetailReducer,
 })
 
 const initialState = {

@@ -29,7 +29,7 @@ export const storyListReducer = (state = { storyList: [] }, action) => {
     }
 }
 
-export const storyDetailReducer = (state = { story: { reviews: [] }}, action) => {
+export const storyDetailReducer = (state = { story: { comments: [] }}, action) => {
     switch(action.type) {
         case STORY_DETAIL_REQUEST:
             return {loading: true, ...state};
@@ -37,5 +37,7 @@ export const storyDetailReducer = (state = { story: { reviews: [] }}, action) =>
             return {loading: false, story: action.payload};
         case STORY_DETAIL_FAIL:
             return {loading: false, error: action.payload};
+        default:
+            return state;
     }
 }

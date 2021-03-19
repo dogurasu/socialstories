@@ -2,3 +2,8 @@
 .container {
     @include contain;
 }
+
+// spacing utilities
+.margin-vertical {
+    margin: 6rem 0;
+}

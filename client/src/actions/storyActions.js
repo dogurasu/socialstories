@@ -27,9 +27,12 @@ export const getSingleStory = (id) => {
     return async (dispatch) => {
         try {
             dispatch({type: STORY_DETAIL_REQUEST});
-            const res = await axios.get(`/api/v1/stories/${id}`);
-            console.log(res);
-            dispatch({type: STORY_DETAIL_SUCCESS, payload: res.data});
+            console.log(id);
+            if (id === undefined) {
+                console.log("undefined");
+            }
+            const { data } = await axios.get(`/api/v1/stories/${id}`);
+            dispatch({type: STORY_DETAIL_SUCCESS, payload: data});
         } catch(err) {
             dispatch({
                 type: STORY_DETAIL_FAIL,

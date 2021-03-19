@@ -55,7 +55,7 @@ const LandingScreen = () => {
             <div className="cta">
                 <Container>
                     <h2 className="font-large">Start Writing Now</h2>
-                    <Link to="/home" className="btn btn-text btn--main font-small">Read Stories Now</Link>
+                    <Link to="/stories" className="btn btn-text btn--main font-small">Read Stories Now</Link>
                 </Container>
             </div>
         </>

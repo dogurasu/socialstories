@@ -10,14 +10,16 @@ const stories = [
         
         Urna molestie at elementum eu facilisis sed odio morbi quis. Blandit aliquam etiam erat velit scelerisque in dictum non consectetur. Urna id volutpat lacus laoreet non curabitur gravida arcu. In vitae turpis massa sed elementum tempus. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Viverra vitae congue eu consequat ac felis donec et. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis. Viverra adipiscing at in tellus integer feugiat scelerisque. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Tincidunt nunc pulvinar sapien et. Aliquam sem fringilla ut morbi. Duis ultricies lacus sed turpis tincidunt id. Nisi lacus sed viverra tellus in hac. Orci dapibus ultrices in iaculis nunc sed augue lacus. Lacus sed viverra tellus in hac habitasse platea dictumst. Enim nunc faucibus a pellentesque sit amet porttitor.`,
         title: `A Lorem Tale`,
-        tags: ["lorem", "ipsum", "first post", "happy family"]
+        tags: ["lorem", "ipsum", "first post", "happy family"],
+        image: '/images/food.jpg'
     },
     {
         story: `Donec adipiscing tristique risus nec feugiat. Egestas purus viverra accumsan in nisl nisi. Sed faucibus turpis in eu mi. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Eu feugiat pretium nibh ipsum. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Turpis cursus in hac habitasse platea dictumst quisque sagittis. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Nibh ipsum consequat nisl vel pretium lectus quam. Nulla aliquet porttitor lacus luctus. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Magna sit amet purus gravida quis blandit. Amet massa vitae tortor condimentum lacinia quis vel. Vulputate mi sit amet mauris commodo quis imperdiet massa. Proin fermentum leo vel orci. Senectus et netus et malesuada fames ac turpis egestas. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Leo in vitae turpis massa sed elementum.
         
         Urna molestie at elementum eu facilisis sed odio morbi quis. Blandit aliquam etiam erat velit scelerisque in dictum non consectetur. Urna id volutpat lacus laoreet non curabitur gravida arcu. In vitae turpis massa sed elementum tempus. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Viverra vitae congue eu consequat ac felis donec et. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis. Viverra adipiscing at in tellus integer feugiat scelerisque. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Tincidunt nunc pulvinar sapien et. Aliquam sem fringilla ut morbi. Duis ultricies lacus sed turpis tincidunt id. Nisi lacus sed viverra tellus in hac. Orci dapibus ultrices in iaculis nunc sed augue lacus. Lacus sed viverra tellus in hac habitasse platea dictumst. Enim nunc faucibus a pellentesque sit amet porttitor.`,
         title: `Tales of the Ipsum`,
-        tags: ["ipsum", "15 minute read", "second post"]
+        tags: ["ipsum", "15 minute read", "second post"],
+        image: '/images/mountain.jpg'
     },
     {
         story: `Donec adipiscing tristique risus nec feugiat. Egestas purus viverra accumsan in nisl nisi. Sed faucibus turpis in eu mi. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Eu feugiat pretium nibh ipsum. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Turpis cursus in hac habitasse platea dictumst quisque sagittis. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Nibh ipsum consequat nisl vel pretium lectus quam. Nulla aliquet porttitor lacus luctus. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Magna sit amet purus gravida quis blandit. Amet massa vitae tortor condimentum lacinia quis vel. Vulputate mi sit amet mauris commodo quis imperdiet massa. Proin fermentum leo vel orci. Senectus et netus et malesuada fames ac turpis egestas. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Leo in vitae turpis massa sed elementum.
@@ -28,7 +30,8 @@ const stories = [
 
         Urna molestie at elementum eu facilisis sed odio morbi quis. Blandit aliquam etiam erat velit scelerisque in dictum non consectetur. Urna id volutpat lacus laoreet non curabitur gravida arcu. In vitae turpis massa sed elementum tempus. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Viverra vitae congue eu consequat ac felis donec et. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis. Viverra adipiscing at in tellus integer feugiat scelerisque. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Tincidunt nunc pulvinar sapien et. Aliquam sem fringilla ut morbi. Duis ultricies lacus sed turpis tincidunt id. Nisi lacus sed viverra tellus in hac. Orci dapibus ultrices in iaculis nunc sed augue lacus. Lacus sed viverra tellus in hac habitasse platea dictumst. Enim nunc faucibus a pellentesque sit amet porttitor.`,
         title: `The Tale of 2 Brothers: a Review`,
-        tags: ["critical", "sad", "movie review"]
+        tags: ["critical", "sad", "movie review"],
+        image: '/images/ocean.jpg',
     },
     {
         story: `Donec adipiscing tristique risus nec feugiat. Egestas purus viverra accumsan in nisl nisi. Sed faucibus turpis in eu mi. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Eu feugiat pretium nibh ipsum. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Turpis cursus in hac habitasse platea dictumst quisque sagittis. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Nibh ipsum consequat nisl vel pretium lectus quam. Nulla aliquet porttitor lacus luctus. Cursus eget nunc scelerisque viverra mauris in aliquam sem. Magna sit amet purus gravida quis blandit. Amet massa vitae tortor condimentum lacinia quis vel. Vulputate mi sit amet mauris commodo quis imperdiet massa. Proin fermentum leo vel orci. Senectus et netus et malesuada fames ac turpis egestas. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Leo in vitae turpis massa sed elementum.
@@ -41,7 +44,8 @@ const stories = [
         
         Et magnis dis parturient montes. Nam libero justo laoreet sit amet cursus sit amet. Sed cras ornare arcu dui. Elementum curabitur vitae nunc sed velit dignissim sodales ut. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Accumsan lacus vel facilisis volutpat est velit. Duis at tellus at urna. At lectus urna duis convallis. Eget velit aliquet sagittis id consectetur purus. Sed vulputate odio ut enim. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.`,
         title: `My 2021 Recap`,
-        tags: ["recap", "sad", "long"]
+        tags: ["recap", "sad", "long"],
+        image: '/images/zebras.jpg'
     },
 ]
 

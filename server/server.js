@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import colors from 'colors';
 import morgan from 'morgan';
+import cors from "cors";
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
@@ -19,6 +20,7 @@ const env = process.env.NODE_ENV;
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
+app.use(cors);
 
 // mount 'em routes
 app.use("/api/v1/users", userRoutes);

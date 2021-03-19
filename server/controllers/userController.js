@@ -69,10 +69,10 @@ const registerUser = asyncHandler(async (req, res) => {
 })
 
 // @desc   Get user profile
-// @route  GET /api/v1/users/profile
-// @access Private
+// @route  GET /api/v1/users/:id
+// @access Public
 const getUserProfile = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.params.id);
     if (user) {
         res.json({
             _id: user._id,
@@ -89,5 +89,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
 export {
     getUsers,
     authenticateUser,
-    registerUser
+    registerUser,
+    getUserProfile
 }

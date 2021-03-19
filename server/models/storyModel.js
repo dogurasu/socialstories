@@ -21,10 +21,14 @@ const commentSchema = mongoose.Schema({
 })
 
 const storySchema = mongoose.Schema({
-    user: {
+    userID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
+    },
+    authorName: {
+        type: String,
+        required: true
     },
     story: {
         type: String,
@@ -35,7 +39,10 @@ const storySchema = mongoose.Schema({
         required: true
     },
     tags: [{type: String}],
-    comments: [commentSchema]
+    comments: [commentSchema],
+    image: {
+        type: String
+    }
 }, {
     timestamps: true
 })

@@ -1,8 +1,9 @@
 import express from 'express';
 import {
     getUsers,
-    authenticateUser,
     registerUser,
+    getUserProfile,
+    authenticateUser,
 } from '../controllers/userController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
@@ -13,6 +14,10 @@ router
     .post(registerUser)
     .get(protect, admin, getUsers)
 
-router.post('/login', authenticateUser);
+router
+    .post('/login', authenticateUser)
+
+router
+    .get('/:id', getUserProfile)
 
 export default router

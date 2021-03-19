@@ -4,17 +4,17 @@ import {
     STORY_LIST_FAIL
 } from "../constants/storyConstants";
 
-export const storyListReducer = (state = { stories: [] }, action) => {
+export const storyListReducer = (state = { storyList: [] }, action) => {
     switch(action.type) {
         case STORY_LIST_REQUEST:
             return {
                 loading: true,
-                stories: []
+                storyList: []
             }
         case STORY_LIST_SUCCESS:
             return {
                 loading: false,
-                stories: action.payload
+                storyList: action.payload
             }
         case STORY_LIST_FAIL:
             return {

@@ -30,7 +30,7 @@ const LandingScreen = () => {
                         <h1 className="title-text text-white">Got a Story? Share it.</h1>
                         <div className="landing-navigation">
                             <Link className="btn btn-text font-small" to="/login">Login/Sign-Up</Link>
-                            <Link className="landing-navigation-about font-small" to="/home">
+                            <Link className="landing-navigation-about font-small" to="/stories">
                                 <span>Check out Stories</span>
                             </Link>
                         </div>

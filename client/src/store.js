@@ -10,8 +10,8 @@ const rootReducer = combineReducers({
 })
 
 const initialState = {
-    stories: [],
-    user: { userInfo: "" }
+    stories: {},
+    // user: { userInfo: "" }
 }
 
 const middleware = [thunk];

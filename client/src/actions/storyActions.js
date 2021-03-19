@@ -2,7 +2,10 @@ import axios from "axios";
 import {
     STORY_LIST_REQUEST,
     STORY_LIST_SUCCESS,
-    STORY_LIST_FAIL
+    STORY_LIST_FAIL,
+    STORY_DETAIL_REQUEST,
+    STORY_DETAIL_SUCCESS,
+    STORY_DETAIL_FAIL
 } from "../constants/storyConstants";
 
 export const listAllStories = () => {
@@ -20,3 +23,18 @@ export const listAllStories = () => {
     };
 };
 
+export const getSingleStory = (id) => {
+    return async (dispatch) => {
+        try {
+            dispatch({type: STORY_DETAIL_REQUEST});
+            const res = await axios.get(`/api/v1/stories/${id}`);
+            console.log(res);
+            dispatch({type: STORY_DETAIL_SUCCESS, payload: res.data});
+        } catch(err) {
+            dispatch({
+                type: STORY_DETAIL_FAIL,
+                payload: err.response && err.response.data.message ? err.response.data.message : err.message
+            });
+        }
+    }
+}

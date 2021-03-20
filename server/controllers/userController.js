@@ -40,10 +40,15 @@ const authenticateUser = asyncHandler(async (req, res) => {
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
     const {name, username, email, password } = req.body;
-    const userExists = await User.findOne({email});
-    if (userExists) {
+    const emailTaken = await User.findOne({email});
+    const userTaken = await User.findOne({username});
+    if (emailTaken) {
         res.status(400);
         throw new Error("Email already taken.");
+    }
+    if (userTaken) {
+        res.status(400);
+        throw new Error("Username already taken.")
     }
 
     const user = await User.create({
@@ -70,15 +75,19 @@ const registerUser = asyncHandler(async (req, res) => {
 
 // @desc   Get user profile
 // @route  GET /api/v1/users/:id
-// @access Public
+// @access Private
 const getUserProfile = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id);
-    if (user) {
+    // console.log(req.user);
+    // const user = await User.findById(req.params.id);
+    if (req.user) {
         res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
+            _id: req.user._id,
+            name: req.user.name,
+            username: req.user.username,
+            email: req.user.email,
+            summary: req.user.summary,
+            userImage: req.user.userImage,
+            isAdmin: req.user.isAdmin,
         })
     } else {
         res.status(404);

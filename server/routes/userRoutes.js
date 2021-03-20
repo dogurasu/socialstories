@@ -18,6 +18,7 @@ router
     .post('/login', authenticateUser)
 
 router
-    .get('/:id', getUserProfile)
+    .route('/:id')
+    .get(protect, getUserProfile)
 
 export default router

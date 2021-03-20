@@ -21,6 +21,12 @@ const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 app.use(cors({credentials: true, origin: true}));
+// hook up morgan if in a development environment
+if (env === "development") {
+    console.log('here');
+    // dev gives us http methods, status, etc
+    app.use(morgan('dev')); 
+}
 
 // mount 'em routes
 // app.get("/", (req, res) => res.send("Hello"));
@@ -28,11 +34,6 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/stories", storyRoutes)
 app.use(express.json()); // hook up express.json middleware to accept JSON data in req.body
 
-// hook up morgan if in a development environment
-if (env === "development") {
-    // dev gives us http methods, status, etc
-    app.use(morgan('dev')); 
-}
 
 // catches any mishap (invalid request, page not found) and logs it
 app.use(notFound);

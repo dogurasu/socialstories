@@ -5,10 +5,20 @@ import {
     storyListReducer,
     storyDetailReducer,
 } from "../src/reducers/storyReducers";
+import {
+    userLoginReducer,
+    userSignupReducer,
+    userRequestReducer,
+    userUpdateReducer,
+} from "../src/reducers/userReducers";
 
 const rootReducer = combineReducers({
     stories: storyListReducer,
     storyDetails: storyDetailReducer,
+    userLogin: userLoginReducer,
+    userSignup: userSignupReducer,
+    userDetails: userRequestReducer,
+    userUpdate: userUpdateReducer
 })
 
 const initialState = {

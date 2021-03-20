@@ -32,7 +32,7 @@ const SignUpCard = (props) => {
         if (userInfo) {
             history.push(redirect);
         }
-    }, [history, userInfo, redirect, userSignup])
+    }, [history, userInfo, redirect, userSignup, setSignupStatus])
 
     const loginDispatcher = (e) => {
         e.preventDefault();

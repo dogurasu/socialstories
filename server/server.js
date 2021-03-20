@@ -23,7 +23,6 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: true}));
 // hook up morgan if in a development environment
 if (env === "development") {
-    console.log('here');
     // dev gives us http methods, status, etc
     app.use(morgan('dev')); 
 }

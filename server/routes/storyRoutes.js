@@ -19,7 +19,7 @@ router.route('/:storyId')
     .put(restrictUserAccess, updateStory);
 
 router.route('/user/:uid')
-    .get(getStoriesByUID)
+    .get(protect, getStoriesByUID)
 
 // router.route('/:userId')
 //     .get(getUserStories)

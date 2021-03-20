@@ -48,9 +48,14 @@ const updateStory = asyncHandler(async(req, res, next) => {
 // @route  Get /api/v1/stories/:uid
 // @access Private/Admin
 const getStoriesByUID = asyncHandler(async(req, res, next) => {
-    const storiesByUser = await Story.find({"userID": req.params.uid});
-    // console.log(storiesByUser);
-    res.status(200).json(storiesByUser);
+    try {
+        const storiesByUser = await Story.find({"userID": req.params.uid});
+        // console.log(storiesByUser);
+        res.status(200).json(storiesByUser);
+    } catch(err) {
+        res.status(401).json({"message": "could not get stories by provided userID"});
+        throw new Error(err);
+    }
 });
 
 

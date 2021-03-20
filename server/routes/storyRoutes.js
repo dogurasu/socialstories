@@ -3,7 +3,8 @@ import {
     getStories,
     getStoryById,
     deleteStory,
-    updateStory
+    updateStory,
+    getStoriesByUID,
 } from "../controllers/storyController.js";
 import { protect, restrictUserAccess, admin } from "../middleware/authMiddleware.js";
 
@@ -16,6 +17,9 @@ router.route('/:storyId')
     .get(getStoryById)
     .delete(restrictUserAccess, deleteStory)
     .put(restrictUserAccess, updateStory);
+
+router.route('/user/:uid')
+    .get(getStoriesByUID)
 
 // router.route('/:userId')
 //     .get(getUserStories)

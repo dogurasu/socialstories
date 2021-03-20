@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Story from "../models/storyModel.js";
+import User from '../models/userModel.js';
 
 // @desc   Get all Stories
 // @route  GET /api/v1/stories
@@ -43,9 +44,20 @@ const updateStory = asyncHandler(async(req, res, next) => {
     
 })
 
+// @desc   Get all stories by 'UID'
+// @route  Get /api/v1/stories/:uid
+// @access Private/Admin
+const getStoriesByUID = asyncHandler(async(req, res, next) => {
+    const storiesByUser = await Story.find({"userID": req.params.uid});
+    // console.log(storiesByUser);
+    res.status(200).json(storiesByUser);
+});
+
+
 export {
     getStories,
     getStoryById,
     deleteStory,
-    updateStory
+    updateStory,
+    getStoriesByUID,
 }

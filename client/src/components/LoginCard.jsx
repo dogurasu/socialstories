@@ -26,7 +26,7 @@ const LoginCard = (props) => {
 
     // utilize useEffect to check if logged in: redirect if so
     useEffect(() => {
-        if (userInfo) {
+        if (userInfo && Object.keys(userInfo).length > 0) {
             history.push(redirect);
         }
     }, [history, userInfo, redirect])

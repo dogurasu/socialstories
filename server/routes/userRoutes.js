@@ -4,6 +4,7 @@ import {
     registerUser,
     getUserProfile,
     authenticateUser,
+    updateUserProfile,
 } from '../controllers/userController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
@@ -20,5 +21,6 @@ router
 router
     .route('/:id')
     .get(protect, getUserProfile)
+    .post(protect, updateUserProfile)
 
 export default router

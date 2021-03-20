@@ -95,9 +95,24 @@ const getUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
+const updateUserProfile = asyncHandler(async (req, res) => {
+    await User.updateOne(
+        {"_id": req.params.id},
+        {
+            $set: {"email": req.body.email, "summary": req.body.summary},
+            $currentDate: {lastModified: true}
+        }
+    )
+    const user = await User.findOne({"_id": req.params.id});
+    console.log(user);
+    res.status(200).json({message: "update success"});
+    // res.json({status: 200, })
+})
+
 export {
     getUsers,
     authenticateUser,
     registerUser,
-    getUserProfile
+    getUserProfile,
+    updateUserProfile,
 }

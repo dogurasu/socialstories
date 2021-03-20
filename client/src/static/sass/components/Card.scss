@@ -7,8 +7,7 @@
 .card {
     max-width: 40rem;
     padding: 3rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-    border: 1px solid rgba(0,0,0,.125);
+    @include outline-card;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

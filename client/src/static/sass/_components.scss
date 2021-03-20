@@ -16,6 +16,15 @@
         padding: 1.5rem 2rem;
         background-color: $color-main;
     }
+
+    &--login {
+        width: 100%;
+        border: none;
+        background-color: $color-main;
+        color: white;
+        cursor: pointer;
+        padding: 1.5rem 1rem;
+    }
 }
 
 .svg {
@@ -124,5 +133,32 @@
 
     &__txt {
         font-size: 2rem;
+    }
+}
+
+.login {
+
+    &__switch {
+        max-width: 60rem;
+        margin: 6rem auto;
+        margin-bottom: 13rem;
+    }
+
+    &__span {
+        color: $color-main;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+.flash {
+    
+    &__success {
+        max-width: 60rem;
+        margin: 2rem auto;
+        margin-bottom: -2rem;
     }
 }

@@ -31,7 +31,7 @@ const LoginScreen = (props) => {
         } else if (signupStatus === "fail") {
             // setShowLogin(false)
         }
-    }, [signupStatus])
+    }, [signupStatus, loginStatus])
 
     const loginForm = (
         <>

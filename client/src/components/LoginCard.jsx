@@ -12,7 +12,7 @@ const LoginCard = (props) => {
 
     const userLogin = useSelector(state => state.userLogin);
     // const {loading, error, userInfo} = userLogin;
-    const {userInfo} = userLogin;
+    // const {userInfo} = userLogin;
     
     const onEmailChange = (e) => {
         setEmail(e.target.value);
@@ -21,7 +21,6 @@ const LoginCard = (props) => {
     const onPasswordChange = (e) => {
         setPassword(e.target.value);
     }
-    console.log(location.search);
     const redirect = location.search ? location.search.split('=')[1] : '/stories';
 
     // utilize useEffect to check if logged in: redirect if so
@@ -33,7 +32,7 @@ const LoginCard = (props) => {
             console.log("set login status to fail");
             setLoginStatus("fail");
         }
-    }, [history, userLogin, redirect])
+    }, [history, userLogin, redirect, setLoginStatus])
 
     const loginDispatcher = (e) => {
         e.preventDefault();

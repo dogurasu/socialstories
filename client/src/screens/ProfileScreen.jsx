@@ -30,17 +30,13 @@ const ProfileScreen = (props) => {
             console.log('user not logged in');
             history.push("/login");
         }
-
-        if (userDetails && Object.keys(userDetails).length > 0) {
-            setSummary(userDetails.summary);
-            setEmail(userDetails.email);
-        }
     }, [dispatch, userLogin, history]);
 
     useEffect(() => {
         console.log("watching updateMessage")
         if (userUpdate && Object.keys(userUpdate).length > 0) {
             if (userUpdate.email !== email || userUpdate.summary !== summary) {
+                console.log("userUpdate check - settings summary/email")
                 console.log("Updated");
                 setEmail(userUpdate.email);
                 setSummary(userUpdate.summary);
@@ -49,19 +45,29 @@ const ProfileScreen = (props) => {
                 setTimeout(() => setUpdate(false), 3000);
             }
         }
-    }, [userUpdate])
+    }, [userUpdate, email, summary])
 
     // second useEffect to fetch user's stories (update email and password fields??)
     useEffect(() => {
-        if (userDetails) {
+        if (userDetails && Object.keys(userDetails).length > 0) {
             console.log('received userDetails');
             dispatch(getUserStories(userLogin.userInfo._id, userLogin.userInfo.token));
+            setSummary(userDetails.summary);
+            setEmail(userDetails.email);
         }
-    }, [userDetails]);
+    }, [userDetails, dispatch, userLogin]);
 
     const handleUpdate = (e) => {
         dispatch(updateUser(summary, email, userLogin.userInfo._id));
     };
+
+    const deleteHandler = (e) => {
+        console.log('deleteHandler clicked');
+    }
+    
+    const editHandler = (e) => {
+        console.log('editHandler clicked');
+    }
 
     return (
         userDetails ? 
@@ -117,7 +123,7 @@ const ProfileScreen = (props) => {
                 </div>
                 <div className="cards" style={{marginBottom: "5rem"}}>
                     {userStories && userStories.stories && userStories.loading === false 
-                        ? userStories.stories.map((story) => <StoryCard key={story._id} {...story}/>)
+                        ? userStories.stories.map((story) => <StoryCard key={story._id} {...story} deleteHandler={deleteHandler} editHandler={editHandler}/>)
                         : null
                     }
                 </div>

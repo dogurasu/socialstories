@@ -15,6 +15,7 @@ const Tag = ({id, deleteTag}) => {
                 placeholder="Add Tag"
             />
             <img
+                alt="tag delete icon"
                 className="tag__img"
                 src={remove_circle}
                 onClick={(e) => {

@@ -15,19 +15,20 @@ const EditScreen = (props) => {
     const [story, setStory] = useState('');
     const [tags, setTags] = useState([]);
     const [tagCount, setTagCount] = useState(0);
-    const [uploading, setUploading] = useState(false);
-    const [created, setCreated] = useState(false);
+    // const [uploading, setUploading] = useState(false);
+    // const [created, setCreated] = useState(false);
     const dispatch = useDispatch();
     const userLogin = useSelector(state => state.userLogin)
     const userDetails = useSelector(state => state.userDetails)
     const createdStory = useSelector(state => state.createdStory).createdStory;
     const {history, location} = props;
+    const { existingStory } = location;
 
     useEffect(() => {
         if (Object.keys(userDetails).length === 0) {
             dispatch(getSingleUser(userLogin.userInfo._id));
         }
-    }, dispatch)
+    }, [dispatch, userDetails, userLogin])
     
     useEffect(() => {
         if (createdStory && Object.keys(createdStory).length > 0) {
@@ -35,7 +36,7 @@ const EditScreen = (props) => {
             dispatch({type: STORY_CREATE_RESET});
             history.push("/profile");
         }
-    }, [createdStory])
+    }, [createdStory, dispatch, history])
 
     // useEffect(() => {
     //     if (createdStory && Object.keys(createdStory).length > 0) {
@@ -52,7 +53,7 @@ const EditScreen = (props) => {
         // console.log(reader.readAsDataURL(file));
         const formData = new FormData();
         formData.append('image', file);
-        setUploading(true);
+        // setUploading(true);
         try {
             const config = {
                 headers: {
@@ -61,10 +62,10 @@ const EditScreen = (props) => {
             }
             const { data } = await axios.post('/api/v1/uploads', formData, config);
             setImage(data.replace("\\\\", "/"));
-            setUploading(false);
+            // setUploading(false);
         } catch(err) {
             console.log(err);
-            setUploading(false);
+            // setUploading(false);
         }
     }
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const StoryCard = ({authorName, authorImage, comments, createdAt, image, story, tags, title, updatedAt, userID, _id}) => {
+const StoryCard = ({authorName, authorImage, comments, createdAt, image, story, tags, title, updatedAt, userID, _id, editHandler, deleteHandler}) => {
     // fetch user for this story
     // we don't need redux for this
     useEffect(() => {
@@ -21,6 +21,24 @@ const StoryCard = ({authorName, authorImage, comments, createdAt, image, story, 
                         <p className="author__date font-small">{date.toLocaleDateString()}</p>
                     </div>
                 </div>
+                {editHandler && (
+                    <div className="edit__btns">
+                        <Link 
+                            to={{
+                                pathname: "/story/edit",
+                                story: {
+                                    user: "doug P"
+                                }
+                            }}
+                            className="btn btn--publish font-small" 
+                            style={{marginTop: "2rem"}} 
+                            onClick={editHandler}
+                        >
+                            Edit
+                        </Link>
+                        {/* <button className="btn" onClick={deleteHandler}>Delete</button> */}
+                    </div>
+                )}
             </div>
         </div>
     );

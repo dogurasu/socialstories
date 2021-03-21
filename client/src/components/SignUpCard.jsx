@@ -11,6 +11,7 @@ const SignUpCard = (props) => {
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [pwMismatch, setPwMismatch] = useState(false);
+    const [error, setError] = useState(false);
 
     const dispatch = useDispatch();
     const {history, location, setSignupStatus} = props;
@@ -28,8 +29,12 @@ const SignUpCard = (props) => {
         if (userSignup) {
             // console.log(userSignup.message);
             setSignupStatus(userSignup.message);
+            if (userSignup.error) {
+                setError(true);
+                setTimeout(() => setError(false), 10000);
+            }
         }
-        if (userInfo) {
+        if (userInfo && Object.keys(userInfo).length > 0) {
             history.push(redirect);
         }
     }, [history, userInfo, redirect, userSignup, setSignupStatus])
@@ -51,6 +56,7 @@ const SignUpCard = (props) => {
             </Helmet>
             <div className="cred">
                 <form action="" method="post" className="cred__form font-small" onSubmit={loginDispatcher}>
+                    {error && <p>{userSignup.message}</p>}
                     <h2 className="font-medium">Sign Up</h2>
                     <div className="cred__name">
                         <label htmlFor="name">Name</label>

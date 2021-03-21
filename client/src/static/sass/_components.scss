@@ -6,6 +6,13 @@
     border-radius: 5px;
     padding: .8rem 1rem;
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
+    transition: 0.2s all;
+    outline: none;
+    display: inline-block;
+
+    &:active {
+        transform: translateY(4px);
+    }
 
     &-smaller {
         // font-size: 
@@ -24,6 +31,15 @@
         color: white;
         cursor: pointer;
         padding: 1.5rem 1rem;
+    }
+
+    &--publish {
+        cursor: pointer;
+        background-color: $color-main;
+        color: white;
+        border: 1px solid rgba(0,0,0,.125);
+        margin: 2rem 0;
+        margin-top: 6rem;
     }
 }
 
@@ -138,6 +154,10 @@
 
 .login {
 
+    &__wrapper {
+        height: 80vh;
+    }
+
     &__switch {
         max-width: 60rem;
         margin: 6rem auto;
@@ -155,10 +175,134 @@
 }
 
 .flash {
-    
     &__success {
         max-width: 60rem;
         margin: 2rem auto;
         margin-bottom: -2rem;
+    }
+    &__failure {       
+    }
+}
+
+.profile {
+    margin: 6rem 0;
+    height: 65vh;
+
+    &__username {
+        margin: 3rem 0;
+    }
+
+    &__details {
+        display: flex;
+        margin: 8rem 0;
+
+        & > div {
+            & > p {
+                font-weight: 600;
+                margin: 2rem 0;
+            }
+        }
+    }
+    
+    &__picture {
+
+        &__container {
+            margin-right: 5rem;
+
+            p {
+                margin: 2rem 0;
+            }
+        }
+
+        &__img {
+            max-width: 20rem;
+        }
+    }
+
+    &__summary {
+
+        &__container {
+            width: 50%;
+            & > textarea {
+                width: 100%;
+                height: 82%;
+                resize: none;
+                padding: 1rem;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    &__credentials {
+        max-width: 60%;
+
+        &__container {
+            & > label {
+            }
+
+            & > input {
+                max-width: 50%;
+            }
+        }
+    }
+
+    & > button {
+        margin: 4rem 0;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.edit {
+
+    &__story {
+        max-width: 100%;
+        height: 30vh;
+    }
+
+    textarea {
+        width: 100%;
+        height: 82%;
+        // resize: none;
+        padding: 1rem;
+        line-height: 1.4;
+    }
+
+    &__form {
+        margin: 4rem 0;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+    }
+
+    &__tags {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            display: flex;
+            align-items: center;
+        }
+
+        &__add {
+            @include icon-btns;
+        }
+    }
+}
+
+.tag {
+    display: flex;
+    
+    &__input {
+        max-width: 18rem;
+        padding: .8rem 1rem;
+        margin: 1rem 0;
+    }
+
+    &__img {
+        @include icon-btns;
     }
 }

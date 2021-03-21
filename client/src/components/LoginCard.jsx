@@ -8,7 +8,7 @@ const LoginCard = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
-    const {history, location} = props;
+    const {history, location, setLoginStatus} = props;
 
     const userLogin = useSelector(state => state.userLogin);
     // const {loading, error, userInfo} = userLogin;
@@ -25,11 +25,15 @@ const LoginCard = (props) => {
     const redirect = location.search ? location.search.split('=')[1] : '/stories';
 
     // utilize useEffect to check if logged in: redirect if so
+    // also set loginStatus to fail if failed to login
     useEffect(() => {
-        if (userInfo && Object.keys(userInfo).length > 0) {
+        if (userLogin.userInfo && Object.keys(userLogin.userInfo).length > 0) {
             history.push(redirect);
+        } else if (userLogin.status === "fail") {
+            console.log("set login status to fail");
+            setLoginStatus("fail");
         }
-    }, [history, userInfo, redirect])
+    }, [history, userLogin, redirect])
 
     const loginDispatcher = (e) => {
         e.preventDefault();

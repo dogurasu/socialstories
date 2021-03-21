@@ -12,3 +12,9 @@
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
     border: 1px solid rgba(0,0,0,.125);
 }
+
+@mixin icon-btns {
+    margin-left: 2rem;
+    width: 3rem;
+    cursor: pointer;
+}

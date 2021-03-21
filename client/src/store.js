@@ -4,12 +4,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
     storyListReducer,
     storyDetailReducer,
+    storyCreateReducer
 } from "../src/reducers/storyReducers";
 import {
     userLoginReducer,
     userSignupReducer,
     userRequestReducer,
     userUpdateReducer,
+    userStoryReducer,
 } from "../src/reducers/userReducers";
 
 const rootReducer = combineReducers({
@@ -18,12 +20,16 @@ const rootReducer = combineReducers({
     userLogin: userLoginReducer,
     userSignup: userSignupReducer,
     userDetails: userRequestReducer,
-    userUpdate: userUpdateReducer
+    userUpdate: userUpdateReducer,
+    userStories: userStoryReducer,
+    createdStory: storyCreateReducer,
 })
+
+const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : {};
 
 const initialState = {
     stories: {},
-    // user: { userInfo: "" }
+    userLogin: { userInfo: userInfoFromStorage }
 }
 
 const middleware = [thunk];

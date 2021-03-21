@@ -7,6 +7,7 @@ import LandingScreen from "./screens/LandingScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import StoryScreen from "./screens/StoryScreen.jsx";
+import EditScreen from "./screens/EditScreen.jsx";
 
 import "./static/sass/main.scss";
 
@@ -22,7 +23,7 @@ const App = () => {
             <Route path="/profile" component={ProfileScreen} exact />
             <Route path="/login" component={LoginScreen} exact />
             <Route path="/stories/:id" component={StoryScreen} exact />
-            <Route path="/stories/create" component={HomeScreen} exact />
+            <Route path="/story/edit" component={EditScreen} exact />
             <Footer />
         </BrowserRouter>
     );

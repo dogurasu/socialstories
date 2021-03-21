@@ -43,11 +43,13 @@ const registerUser = asyncHandler(async (req, res) => {
     const emailTaken = await User.findOne({email});
     const userTaken = await User.findOne({username});
     if (emailTaken) {
-        res.status(400);
+        res.status(400).json({message: "Email already taken"})
+        return;
         throw new Error("Email already taken.");
     }
     if (userTaken) {
-        res.status(400);
+        res.status(400).json({message: "Username already taken"})
+        return;
         throw new Error("Username already taken.")
     }
 

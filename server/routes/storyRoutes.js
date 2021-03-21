@@ -5,13 +5,15 @@ import {
     deleteStory,
     updateStory,
     getStoriesByUID,
+    createStory,
 } from "../controllers/storyController.js";
 import { protect, restrictUserAccess, admin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 router.route('/')
-    .get(getStories);
+    .get(getStories)
+    .post(protect, createStory);
 
 router.route('/:storyId')
     .get(getStoryById)

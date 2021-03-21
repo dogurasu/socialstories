@@ -58,6 +58,29 @@ const getStoriesByUID = asyncHandler(async(req, res, next) => {
     }
 });
 
+// @desc   Create a new Story
+// @route  Post /api/v1/stories
+// @access Private/Admin
+const createStory = asyncHandler(async(req, res, next) => {
+    try {
+        console.log(req.body);
+        const newStory = await Story.create({
+            userID: req.body.userID,
+            authorName: req.body.authorName,
+            authorImage: req.body.authorImage,
+            story: req.body.story,
+            title: req.body.title,
+            // tags: req.body.tags,
+            image: req.body.image,
+        })
+        // res.send("Story created");
+        res.status(200).json(newStory);
+    } catch(err) {
+        res.status(401).json({"message": "couldn't create story", error: err});
+        throw new Error(err);
+    }
+})
+
 
 export {
     getStories,
@@ -65,4 +88,5 @@ export {
     deleteStory,
     updateStory,
     getStoriesByUID,
+    createStory,
 }
